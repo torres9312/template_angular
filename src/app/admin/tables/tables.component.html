@@ -1,0 +1,46 @@
+<div class="overlay-header"></div>
+
+  
+<div class="container mt-2">
+    <div class="breadcrum-components">
+        <span><i class="fa fa-home mr-1"></i> <a  [routerLink]="['/dashboard']" > Inicio</a></span>
+        <span> / </span>
+        <span><a  [routerLink]="['/dashboard']"> Dashboard</a></span>
+        <span> / </span>
+        <span> Tables</span>
+    </div>
+    <div class="title-container">
+      <h4 class="title-section">Tables Example</h4>
+      <p class="info-section mt-0">Lista de datos de ejemplo</p>
+    </div>
+    <div class="card-section ml-1 mr-1">
+        <div class="card-body">
+            <div class="row">
+                <div class="container-button-action" (click)="activeToast()">
+                  <span>Agregar</span>
+                  <button class="button-action">+</button>
+                </div>
+                <table id="datatable" datatable [dtTrigger]="dtTrigger" [dtOptions]="dtOptions" class="table-responsive table-striped">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>User Id</th>
+                        <th>Titulo</th>
+                        <th>Estatus</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let user of data">
+                        <td data-label="ID"><span>{{ user.id }}</span></td>
+                        <td data-label="User Id"><span>{{ user.userId }}</span></td>
+                        <td data-label="Titulo"><span>{{ user.title }}</span></td>
+                        <td data-label="Estatus">
+                          <span><div class="badge-status" [ngClass]="{'error': user.completed === false,'success': user.completed === true}">{{ (user.completed) ? 'Activado' : 'Desactivado' }}</div></span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>   
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="pdf-viewer" *ngIf="viewPdf">
+    <div class="header-pdf-previsualizar">
+        <span (click)="onClose()" class="close-btn">X</span>
+    </div>
+    <iframe *ngIf="!isImage"  [src]="file | safe" title="preview-pdf" height="100%" width="100%"></iframe>
+    <div class="frame-image">
+        <img class="img-preview" [src]="file | safe" alt="">
+    </div>
+</div>

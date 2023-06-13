@@ -1,0 +1,87 @@
+<div class="overlay-header"></div>
+
+<div class="container mt-2">
+    <div class="breadcrum-components">
+        <span><i class="fa fa-home mr-1"></i> <a  [routerLink]="['/dashboard']" > Inicio</a></span>
+        <span> / </span>
+        <span><a  > Dashboard</a></span>
+        <span> / </span>
+        <span> Forms</span>
+    </div>
+    <div class="card-section ml-1 mr-1">
+        <div class="card-body">
+            <div class="title-container ml-3" style="margin-left: 1.5rem;">
+                <h4 class="title-section">Elements Example</h4>
+                <p class="info-section">Lista de elementos template para los proyectos</p>
+            </div>
+            <div class="subtitle-content">
+                <h2 class="mb-0">Buttons</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4 class="offocus">Classics</h4>
+                    <button class="btn-action primary">primary</button>
+                    <button class="btn-action secondary">secondary</button>
+                </div>
+                <div class="col-md-2">
+                    <h4 class="offocus">Round</h4>
+                    <button class="btn-action primary round">primary</button>
+                    <button class="btn-action secondary round">secondary</button>
+                </div>
+                <div class="col-md-2">
+                    <h4 class="offocus">Off Color</h4>
+                    <button class="btn-action round offcolor">primary</button>
+                </div>
+                <div class="col-md-2">
+                    <h4 class="offocus">Border</h4>
+                    <button class="btn-action primary round border">primary</button>
+                </div>
+                <div class="col-md-2">
+                    <h4 class="offocus">Border Color</h4>
+                    <button class="btn-action primary round border-color">primary</button>
+                </div>
+                
+            </div>
+            <div class="subtitle-content">
+                <h2>Uploads</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container-files"  (files)="onSelectFile($event, true)" appDragDrop>
+                        <input multiple type='file'  (change)="onSelectFile($event, false)" name="file-1[]" id="file-1" class="inputfile inputfile-1">
+                        <div class="box-file-input" *ngIf="files.length == 0">
+                            <span class="icon-file"><i class="fa fa-file-o" aria-hidden="true"></i></span>
+                            <span class="text-upload">Arrastra aquí tus archivos o da click en el botón</span>
+                            <label for="file-1" class="label-upload">Subir Archivos</label>
+                        </div>
+                        <div class="box-files" *ngIf="files.length > 0">
+                            <div class="file-prev" *ngFor="let item of files;">
+                                <div class="file-prev-header">
+                                    <i class="fa fa-file-o image-prev" aria-hidden="true"></i>
+                                </div>
+                                <div class="file-prev-body">
+                                    <strong>Nombre: </strong>
+                                    <span>{{item.nombreArchivo}}</span>
+                                </div>
+                                <div class="container-files-buttons">
+                                    <button (click)="verPdf(item.base64)" class="open-btn"><i class="fa fa-folder-open" aria-hidden="true"></i></button>
+                                    <button (click)="deleteFile(item.nombreArchivo)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                            <label for="file-1"  class="file-add" *ngIf="files.length > 0"><!-- ADD FILE --></label>
+                        </div>
+                        <div class="spinner-files">
+                           <div class="box-spinner">
+                               <div class="spinner-circle" role="status"></div>
+                               <div class="spinner-circle" role="status"></div>
+                               <div class="spinner-circle" role="status"></div>
+                           </div>
+                           <span>Cargando archivos</span>
+                       </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

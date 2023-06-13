@@ -1,0 +1,321 @@
+
+
+nav{
+    height: 70px;
+    background-color: var(--dark-color-sidebar);
+    padding: 10px 2rem 10px .8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    position: fixed;
+    width: calc(100% - 250px);
+    z-index: 10;
+    transition-property: width, background;
+    transition-duration: var(--speed-sidebar);
+    box-shadow: rgb(48 48 48 / 18%) 0px 11px 13px 1px;
+}
+
+.overlayback{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #ffffff17;
+}
+
+.d-flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+nav.full{
+  width: 100%;
+}
+
+nav.nav-color{
+  background-color: #ffffff9a;
+  backdrop-filter: blur(8px);
+}
+
+nav .options i{
+  color: #fff;
+  font-weight: 500;
+}
+
+nav.nav-color .options i{
+  color: #000;
+}
+
+.overlay-dropdown-profile{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  /* background-color: #000; */
+}
+
+.btn-collapsed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    padding: 6px;
+
+}
+button:active,button:focus{
+    border: none;
+    -webkit-box-shadow: none!important; 
+    box-shadow: none!important;
+}
+
+.btn-collapsed i{
+    color: #000;
+    font-size: 20px;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    border-radius: 25px;
+    background:var(--dark-color-sidebar);
+    color: rgb(54, 54, 54);
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus,.dropbtn:active {
+    /* background-color: var(--light-color); */
+    opacity: .8;
+  }
+
+  .name-profile{
+    margin-right: .3rem;
+    pointer-events: none;
+    max-width: 250px;
+    overflow: hidden;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown-custom {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: auto;
+  }
+
+  .dropdown-custom button i{
+      font-size: 16px;
+      font-weight: 600;
+      color: rgb(255, 255, 255);
+      pointer-events: none;
+  }
+
+
+  .dropdown-custom *{
+      font-size: 12px;
+  }
+
+  .dropdown-custom .status-dropdown span{
+      border-radius: 20px;
+      height: 12px;
+      width: 12px;
+      display: inline-block;  
+      
+  }
+
+  .dropdown-custom .status-dropdown span.green{
+      background-color: rgb(125, 201, 10);
+  }
+  .dropdown-custom .status-dropdown span.red{
+      background-color: rgb(194, 35, 23);
+  }
+  
+  .container-dropmenus{
+      display: flex;
+  }
+  .container-dropmenus .badge{
+      position: absolute;
+      background-color: rgb(189, 0, 0);
+      top: 3px;
+      right: 7px;
+      width: auto;
+      padding: 3px;
+      text-align: center;
+      border-radius: 4px;
+      font-size: 11px;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-navbar {
+    /* display: none; */
+    position: fixed;
+    background-color: #fefefe;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    z-index: 9999;
+    right: 10px;
+    top: 65px;
+    z-index: 9.8rem;
+    border-radius: 3px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .container-notify{
+      max-height: 260px;
+      overflow-y: auto;
+  }
+
+  .dropdown-navbar.messages{
+    background-color: #fefefe;
+    min-width: 300px;
+    left: -16rem;
+    bottom: -17.5rem;
+    height: 300px;
+    border-radius: 5px;
+    z-index: 10;
+    
+
+  }
+
+  .badge-notify{
+    pointer-events: none;
+  }
+
+  .dropdown-custom a:nth-child(1){
+    border-bottom: 1px solid rgb(201, 201, 201);
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-navbar a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+  }
+  .dropdown-navbar a:hover {
+    cursor: pointer;
+  }
+
+  .dropdown-navbar.messages a {
+    padding: 10px 15px;
+    font-size: 12px;
+    
+  }
+  .dropdown-navbar.messages a strong {
+    font-weight: 600;
+    
+  }
+  .dropdown-navbar.messages a.notify-active{
+    background-color: #ae9c5543;
+    
+  }
+  .dropdown-navbar.messages a {
+    border-bottom: 1px solid rgb(207, 207, 207);
+  }
+
+  .tag-username{
+    padding: 6px 16px 6px 16px;
+    font-size: 14px;
+    color: #ffffff;
+   /*  text-align: center; */
+    background-color: #f7f7f7;
+    border-radius: 2px 2px 0 0;
+    text-transform: capitalize;
+    min-height: 30px;
+  }
+
+  .nickname{
+    font-size: 12px!important;
+    font-weight: 600;
+    color: rgb(18, 18, 18);
+    margin-right: 0.4rem;
+    pointer-events: none;
+    text-align: center;
+    padding: 0.4rem 1rem;
+    background-color: #f8f8f8;
+    color: #0f0e0e;
+    display: block;
+    width: 100%;
+  }
+
+  .notify-active strong{
+    font-weight: 600!important;
+    color: #000!important;
+  }
+
+  .dropdown-custom .title-menu{
+      background-color: #7a6f44;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 5px 5px 0px 0px;
+  }
+
+ 
+
+  .dropdown-navbar .status-dropdown {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid rgb(205, 205, 205);
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+  }
+
+  .dropdown-navbar .status-dropdown:hover{
+      cursor: auto;
+      
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-navbar a:hover {background-color: rgb(238, 238, 238)}
+  .dropdown-navbar.messages a:hover {background-color: rgb(238, 238, 238)}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-navbar container when the user clicks on the dropdown button) */
+  .show {
+    display:block;
+  }
+  .dropdown-content.show{
+    display:block;
+  }
+  .dropdown-content{
+    display: none;
+  }
+
+  @media screen and (max-width: 620px) {
+    .logo-navbar img:nth-child(1),.logo-navbar img:nth-child(2){
+        display: none;
+    }
+
+    .logo-gob{
+      width: 80px;
+      height: 40px;
+    }
+
+    .name-profile{
+      display: none;
+    }
+  } 
+
+
+@media (max-width: 768px) {
+  nav{
+    width: 100%;
+  }
+}

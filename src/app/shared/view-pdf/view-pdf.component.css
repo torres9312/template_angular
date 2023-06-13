@@ -1,0 +1,19 @@
+.image-view{
+    display: flex;
+    justify-content: center;
+    max-height: 300px;
+}
+
+.frame-image{
+    width: 100%;
+    height: calc(100vh - 50px);
+    background-color: #414446;
+    display: flex;
+    justify-content: center;
+    padding-top: 6rem;
+
+}
+
+.img-preview{
+    max-height: 300px;
+}

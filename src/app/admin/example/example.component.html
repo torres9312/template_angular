@@ -1,0 +1,65 @@
+<div class="overlay-header"></div>
+
+<div class="container mt-2">
+    <div class="breadcrum-components">
+        <span><i class="fa fa-home mr-1"></i> <a  [routerLink]="['/dashboard']" > Inicio</a></span>
+        <span> / </span>
+        <span><a  > Dashboard</a></span>
+        <span> / </span>
+        <span> Forms</span>
+    </div>
+    <div class="card-section ml-1 mr-1">
+        <div class="card-body">
+            <div class="title-container ml-3" style="margin-left: 1.5rem;">
+                <h4 class="title-section">Forms Example</h4>
+                <p class="info-section">Completa los datos del siguiente formulario</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="box-input-form">
+                        <small class="invalid-field tooltip-info" >
+                            <span class="tooltip-dialog">Requerido</span>
+                        </small>
+                        <input  placeholder="&nbsp;"  type="text" class="form-input">
+                        <label for="nombre">Nombre</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="box-input-form">
+                        <small class="invalid-field tooltip-info" >
+                            <span class="tooltip-dialog">Requerido</span>
+                        </small>
+                        <input  placeholder="&nbsp;"  type="text" class="form-input">
+                        <label for="nombre">Apellido</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="box-input-form">
+                        <small class="invalid-field tooltip-info" >
+                            <span class="tooltip-dialog">Requerido</span>
+                        </small>
+                        <input Monetary="true"  placeholder="&nbsp;"  type="text" class="form-input">
+                        <label for="nombre">Edad</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4">
+                    <div class="box-input-form">
+                        <small class="invalid-field tooltip-info" >
+                            <span class="tooltip-dialog">Requerido</span>
+                        </small>
+                        <select dinamyc   name="superficieId" id="superficieId" >
+                            <option [ngValue]=""></option>
+                            <option [ngValue]="1994">1994</option>
+                            <option [ngValue]="1993">1992</option>
+                            <option [ngValue]="1992">1992</option>
+                        </select>
+                        <label for="tipoMedidaId">Año</label>
+                    </div>
+               </div>
+            </div>
+
+        </div>
+    </div>
+</div>

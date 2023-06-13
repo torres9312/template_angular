@@ -1,0 +1,43 @@
+<div id="content" class="content-navbar">
+    <nav class="navbar navbar-light shadow-sm" [ngClass]="{'full': collapsed,'nav-color' : navColor}">
+        <div class="overlayback"></div>
+        <div class="d-flex center-align">
+            <button type="button" id="sidebarCollapse" (click)="collapseMenu()" class="btn-collapsed">
+                <span class="options">
+                    <i *ngIf="collapsed" style="font-size: 20px;cursor: pointer;" class="fa fa-bars"></i>
+                    <i *ngIf="!collapsed" style="font-size: 25px;cursor: pointer;" class="fa fa-angle-double-left"></i>
+                </span>
+            </button>
+            <div style="margin-left:.5rem ;">
+                <h3 ><i *ngIf="!collapsed" style="font-size: 16px;cursor: pointer;" class="fa-solid fa-angles-left"></i></h3>
+             <!--    <img height="50px" class="logo-gob" style="margin-top: -0.5rem;" src="assets/img/logo-veracruz-1.png" alt="">
+                <img height="50px" class="logo-gob" style="margin-top: -0.5rem;" src="assets/img/sedarpa.png" alt=""> -->
+            </div>
+        </div>
+       
+        <div class="d-flex">
+            <div class="dropdown-custom">
+                <button  class="dropbtn" (click)="openMenu($event)">  <i class="fa fa-bell-o" aria-hidden="true"></i></button>
+                <div class="dropdown-content" >
+                    <div class="overlay-dropdown-profile" (click)="closeMenu($event)"></div>
+                    <div class="dropdown-navbar" style="min-height: 90px;min-width: 190px;">
+                        <span class="nickname">Notificaciones</span>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown-custom">
+                <span class="name-profile">{{username}}</span>
+                <button  class="dropbtn" (click)="openMenu($event)">  <i class="fa fa-user-circle"></i></button>
+                <div class="dropdown-content" >
+                    <div class="overlay-dropdown-profile" (click)="closeMenu($event)"></div>
+                    <div class="dropdown-navbar">
+                        <span class="nickname">Sesión</span>
+                        <div class="status-dropdown" >Activo <span class="green"></span> </div>
+                        <a (click)="logout()"   class="link-dropdown">Cerrar Sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

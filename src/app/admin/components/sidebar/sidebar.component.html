@@ -1,0 +1,75 @@
+
+
+
+<nav id="sidebar" class="sidebar shadow" [ngClass]="{active: collapsed}">
+
+    <!--   <button type="button" id="sidebarCollapse" (click)="collapseMenuButton()" class="btn-collapsed">
+        <span>
+            <i *ngIf="collapsed" style="font-size: 14px;cursor: pointer;" class="fa fa-angles-right"></i>
+            <i *ngIf="!collapsed" style="font-size: 14px;cursor: pointer;" class="fa-solid fa-angles-left"></i>
+        </span>
+      </button> -->
+        
+        <div *ngIf="backgroundImage" id="vector-image" [style.background-image]="'url(../../../assets/img/vectors/' + imgBackground + '.jpg)'" class="vector-image"></div>
+        <div class="sidebar-header">
+            <div class="logo">
+              <!-- <img width="120px" height="40px" src="assets/img/logo.png" alt="">  -->  
+            </div>
+            <span class="btn-close-responsive" (click)="active()">
+                x
+            </span>
+        </div>
+        <div class="container-list-sidebar">
+            <ul class="nav-links">
+                <li *ngFor="let item of menuItems">
+                  <a *ngIf="item.tipo === 'standard'" [routerLink]="[item.ruta]" routerLinkActive="active" >
+                    <i class="{{item.icono}}"></i>
+                    <span class="link_name">{{item.nombre}}</span>
+                  </a>
+    
+                  <div *ngIf="item.tipo === 'submenu'" class="icon-link" (click)="showSubMenus($event)">
+                    <a >
+                      <i class="{{item.icono}}"></i>
+                      <span class="link_name">{{item.nombre}}</span>
+                    </a>
+                    <i class="fa fa-angle-left arrow" style="font-size: 20px;"></i>
+                  </div>
+                  <ul class="sub-menu" *ngIf="item.tipo === 'submenu'">
+                    <li *ngFor="let subitem of item.subitems"><a [routerLink]="[subitem.ruta]" routerLinkActive="active" >{{subitem.nombre}}</a></li>
+                  </ul>
+                </li>
+            </ul>
+            
+        </div>
+        <div class="menu-templates">
+          <button (click)="showTemplates()"><i class="fa fa-cog" style="font-size: 18px;"></i></button>
+        </div>
+    
+       
+        
+        <div class="overlay-modal" (click)="showTemplates()" [ngClass]="{'show': modalTemplate}">
+          <div class="modal-templates shadow-sm" >
+            <p class="text-center" style="font-size: 14px;">Selecciona un tema</p>
+            <div class="palette-colors">
+              <span (click)="colorSolid('brown')" class="color brown"></span>
+              <span (click)="colorSolid('blue')" class="color blue"></span>
+              <span (click)="colorSolid('black')" class="color black"></span>
+              <span (click)="colorSolid('red')" class="color red"></span>
+            </div>
+            <div class="grid-themes">
+              <div class="img-template shadow-sm" (click)="changeTemplate('vector-1')">
+                <img src="assets/img/vectors/vector-1.jpg" alt="">
+              </div>
+              <div class="img-template shadow-sm" (click)="changeTemplate('vector-2')">
+                <img src="assets/img/vectors/vector-2.jpg" alt="">
+              </div>
+              <div class="img-template shadow-sm" (click)="changeTemplate('vector-3')">
+                <img src="assets/img/vectors/vector-3.jpg" alt="">
+              </div>
+              <div class="img-template shadow-sm" (click)="changeTemplate('vector-4')">
+                <img src="assets/img/vectors/vector-4.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>

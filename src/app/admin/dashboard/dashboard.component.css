@@ -1,0 +1,84 @@
+.nav{
+    --nav-bg: #000!important;
+}
+
+
+
+.container-dashboard{
+    width: 100%;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap: .2em;
+    flex-wrap: wrap;
+    overflow: visible;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 3;
+    margin-top: 2rem;
+   /* margin-top: 2rem; */
+}
+
+.card-item{
+    width: 300px;
+    display: flex;
+    height: 120px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition-property: transform;
+    transition-duration: 500ms;
+    margin-bottom: 1rem;
+    box-shadow: 0px 9px 20px rgba(46, 35, 94, 0.07);
+    background-color: #fff;
+    border-left: 6px solid var(--color-card);
+}
+
+.card-item .first-section{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.second-section{
+    padding: 3px 10px;
+}
+
+.card-item .second-section{
+    width: 70%;
+}
+
+.second-section .title-card{
+    margin: 5px 0 10px 0;
+    font-size: 16px;
+}
+.second-section p{
+    margin-top: 0;
+    font-size: 12px;
+}
+
+.card-item:hover{
+    box-shadow: rgb(0 0 0 / 24%) 0px 4px 12px;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.icon-card{
+    font-size: 90px;
+    opacity: 0.3;
+    color: var(--color-card);
+}
+
+.title-container *{
+    color: #fff;
+}
+
+
+.title-container {
+    margin: 2rem 1rem 1.5rem 1rem;
+}
+
